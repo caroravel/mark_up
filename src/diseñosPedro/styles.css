@@ -1,0 +1,122 @@
+
+.e1_5 { 
+	background-color:rgba(255, 255, 255, 1);
+	width:1512px;
+	height:982px;
+	position:absolute;
+}
+.e11_18 { 
+	width:545px;
+	height:545px;
+	position:absolute;
+	left:483px;
+	top:218px;
+	background-image:url(imagenes/rectangle_1.png);
+	background-repeat:no-repeat;
+	background-size:cover;
+}
+.e5_3 { 
+	background-color:rgba(217.0000022649765, 217.0000022649765, 217.0000022649765, 1);
+	width:383px;
+	height:61px;
+	position:absolute;
+	left:564px;
+	top:375px;
+	border-top-left-radius:15px;
+	border-top-right-radius:15px;
+	border-bottom-left-radius:15px;
+	border-bottom-right-radius:15px;
+}
+.e1_7 { 
+	color:rgba(181.68749392032623, 181.68749392032623, 181.68749392032623, 1);
+	width:45px;
+	height:24px;
+	position:absolute;
+	left:589px;
+	top:394px;
+	font-family:Inter;
+	text-align:left;
+	font-size:20px;
+	letter-spacing:0;
+}
+.e5_4 { 
+	background-color:rgba(217.0000022649765, 217.0000022649765, 217.0000022649765, 1);
+	width:383px;
+	height:61px;
+	position:absolute;
+	left:564px;
+	top:484px;
+	border-top-left-radius:15px;
+	border-top-right-radius:15px;
+	border-bottom-left-radius:15px;
+	border-bottom-right-radius:15px;
+}
+.e11_16 { 
+	width:220px;
+	height:61px;
+	position:absolute;
+	left:644px;
+	top:634px;
+	background-image:url(imagenes/rectangle_4.png);
+	background-repeat:no-repeat;
+	background-size:cover;
+}
+
+.e5_5 { 
+	color:rgba(181.68749392032623, 181.68749392032623, 181.68749392032623, 1);
+	width:111px;
+	height:24px;
+	position:absolute;
+	left:589px;
+	top:503px;
+	font-family:Inter;
+	text-align:left;
+	font-size:20px;
+	letter-spacing:0;
+}
+.e16_29 { 
+	color:rgba(0, 0, 0, 1);
+	width:159px;
+	height:18px;
+	position:absolute;
+	left:569px;
+	top:572px;
+	font-family:Inter;
+	text-align:left;
+	font-size:15px;
+	letter-spacing:0;
+}
+.e16_30 { 
+	color:rgba(0, 0, 0, 1);
+	width:130px;
+	height:18px;
+	position:absolute;
+	left:812px;
+	top:572px;
+	font-family:Inter;
+	text-align:right;
+	font-size:15px;
+	letter-spacing:0;
+}
+.e8_3 { 
+	color:rgba(255, 255, 255, 1);
+	width:60px;
+	height:24px;
+	position:absolute;
+	left:724px;
+	top:653px;
+	font-family:Inter;
+	text-align:left;
+	font-size:20px;
+	letter-spacing:0;
+}
+.e86_5 { 
+	width:354px;
+	height:54px;
+	position:absolute;
+	left:577px;
+	top:277px;
+	background-image:url(imagenes/bienvenido.png);
+	background-repeat:no-repeat;
+	background-size:cover;
+}
