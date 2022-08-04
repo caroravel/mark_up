@@ -155,7 +155,7 @@ function Login() {
 
                 onChange={(e) => setconfPassword(e.target.value)}
 
-                placeholder="Confirmar contraseña"
+                placeholder="Conf. contraseña"
 
                 className="input"
               />
@@ -167,8 +167,8 @@ function Login() {
 
         <div className="ultimalinea">
           <div className="checkboxes">
-            <div className="checkbox"><input type="radio" name="clienteOAgencia" value={cliente} />Cliente</div>
-            <div className="checkbox"><input type="radio" name="clienteOAgencia" value={agencia} />Agencia</div>
+            <div className="checkbox"><input type="radio" name="clienteOAgencia" value={cliente} /><div className = "palabraCheck">Cliente</div></div>
+            <div className="checkbox"><input type="radio" name="clienteOAgencia" value={agencia} /><div className = "palabraCheck">Agencia</div></div>
           </div>
 
           <button className="botoncitoCrearSesion" onClick={botonCrearSesion}>
@@ -180,7 +180,10 @@ function Login() {
           </button>
         </div>
 
+        <div className = "PostaUltLinea">
         <Link to="/ingresar" className="YaTengoCuenta">Ya tengo cuenta</Link>
+        <Link to="/ingresar" className="VolverAlInicio">Volver al inicio</Link>
+        </div>
 
       </Form>
     </div>

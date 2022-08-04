@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;700&display=swap');
 .Login{
 	width:545px;
 	height:545px;
@@ -15,7 +16,7 @@
 }
 
 .Nombre{
-    color:rgb(0, 0, 0);
+	color: #B6B6B6;
 	font-family:Inter;
 	text-align:center	;
 	font-size:100%;
@@ -80,28 +81,30 @@
 }
 
 .registrarse{
-	width: 300px;
 	height:60px;
+	width: 350px;
 	/*background-image:url("./diseñosPedro/images/registrarse.png");
 	background-repeat:no-repeat;
 	background-position: center;
 	background-size: contain;*/
-	font-size: 50px;
+	font-size: 53.5px;
 	margin-top: 20px;
-	font-family: 'Epilogue', sans-serif; 
+	font-family: 'Sora', sans-serif;
 	font-weight: 700;
-	letter-spacing: 0px;
+	letter-spacing: 3px;
 }
 
 .input {
 	display: inline-block;
 	padding: 8px;
 	font-size: 18px;
-	border-radius: 9px;
-	border: 2px solid black;
+	border-radius: 15px;
+	border: 2px solid #cac7c7;
+	;
 	width: 100%;
-	height: 45px;
+	height: 60px;
 	font-family: 'Epilogue', sans-serif;
+	background: #cac7c7;
 }
 
 .input.email{
@@ -114,11 +117,12 @@
 	align-items: center;
 	font-size: 1.8rem;
 	gap: 20px;
+	color: black;
 }
 
 .checkbox {
 	display: flex;
-	gap: 5px;
+	gap: 10px;
 	align-items: center;
 }
 
@@ -138,9 +142,16 @@
 	flex-direction: column;
 	align-items: center;
 	gap: 40px;
+	width: 350px;
 }
 
 .ultimalinea {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+}
+
+.PostaUltLinea{
 	display: flex;
 	width: 100%;
 	justify-content: space-between;
@@ -151,4 +162,18 @@
 	margin: 0;
 	box-sizing: border-box;
 	font-family: 'Epilogue', sans-serif;
+}
+
+.palabraCheck{
+	font-size: 20px;
+}
+
+.YaTengoCuenta{
+	font-style: italic;
+	color: black;
+}
+
+.VolverAlInicio{
+	font-style: italic;
+	color: black;
 }
