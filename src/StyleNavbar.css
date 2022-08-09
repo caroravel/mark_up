@@ -1,0 +1,22 @@
+.navcontenedor{
+    background: #cac7c7;
+    font-size: 35px;
+    padding: 3vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .activo{
+    color: #948f8f;
+    text-decoration: underline;
+    display: inline;
+    margin-right: 6vh;
+  }
+  
+  .desactivo{
+    color: #948f8f;
+    text-decoration: none;
+    display: inline;
+    margin-right: 6vh;
+  }

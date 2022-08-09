@@ -1,18 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;700&display=swap');
-.Login{
+.Login, .Ingresar{
 	width:545px;
 	height:545px;
 	margin-left: 30%;
 	border: 8px solid black;
 	border-radius: 40px;
 	text-align: center;
-	padding: 30px;
+	padding: 20px;
 	box-sizing: border-box;
 	margin-top: 40px;
 	display: flex;
 	flex-direction: column;
 	gap: 30px;
 	align-items: center;
+	
 }
 
 .Nombre{
@@ -59,7 +60,7 @@
 	flex-grow: 1;
 }
 
-.botoncitoCrearSesion{
+.botoncitoCrearSesion, .botoncitoIngresar{
 	background-color:rgb(0, 0, 0);
 	width:50px;
 	height:50px;
@@ -80,7 +81,7 @@
 	color: rgb(255, 255, 255);
 }
 
-.registrarse{
+.registrarse, .Bienvenido{
 	height:60px;
 	width: 350px;
 	/*background-image:url("./diseñosPedro/images/registrarse.png");
@@ -100,7 +101,7 @@
 	font-size: 18px;
 	border-radius: 15px;
 	border: 2px solid #cac7c7;
-	;
+
 	width: 100%;
 	height: 60px;
 	font-family: 'Epilogue', sans-serif;
@@ -135,6 +136,7 @@
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
+	width: 100%;
 }
 
 .form {
