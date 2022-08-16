@@ -1,5 +1,5 @@
 .navcontenedor{
-    background: #cac7c7;
+    background: rgb(189, 182, 182);
     font-size: 35px;
     padding: 3vh;
     display:flex;
@@ -8,15 +8,15 @@
   }
   
   .activo{
-    color: #948f8f;
+    color: #adaaa9;
     text-decoration: underline;
     display: inline;
     margin-right: 6vh;
   }
   
   .desactivo{
-    color: #948f8f;
-    text-decoration: none;
-    display: inline;
-    margin-right: 6vh;
+    color: #adaaa9;
+  text-decoration: none;
+  display: inline;
+  margin-right: 6vh;
   }
