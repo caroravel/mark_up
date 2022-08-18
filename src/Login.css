@@ -16,6 +16,19 @@
 	
 }
 
+.popup {
+	position: absolute;
+	left: 50%;
+	top: -100%;
+	z-index: -1;
+	transform: translate(-50%, -50%);
+	transition: 0.5s;
+}
+
+.popup.open {
+	top: 50%;
+}
+
 .Nombre{
 	color: #B6B6B6;
 	font-family:Inter;

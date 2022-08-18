@@ -6,6 +6,10 @@
     justify-content: center;
     align-items: center;
   }
+
+  .navbar {
+    z-index: 100;
+  }
   
   .activo{
     color: #adaaa9;
