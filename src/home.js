@@ -27,9 +27,11 @@ const PopUp = ({ handleSubmit, open }) => {
 
   const [accessToken, setaccessToken] = useState("");
 
+  const [idCampania, setidCampania] = useState("");
+
   return (
     <div className={"popup" + (open ? " open" : "")}>
-      <div className="Bienvenido">Bienvenido</div>
+      <div className="Bienvenido">Nueva Campaña</div>
 
       <Form className="form" onSubmit={handleSubmit}>
         <div className="inputText">
@@ -53,9 +55,19 @@ const PopUp = ({ handleSubmit, open }) => {
               className="input"
             />
           </Form.Group>
+          <Form.Group size="lg" controlId="idCampania">
+            <Form.Control
+              autoFocus
+              type="number"
+              value={idCampania}
+              placeholder="id campaña"
+              onChange={(e) => setidCampania(e.target.value)}
+              className="input"
+            />
+          </Form.Group>
         </div>
 
-        <button className="botoncitoIngresar">
+        <button className="botoncitoIngresar" onClick>
           <div className="palabraBotonCS">
             <svg viewBox="0 0 24 24">
               <path

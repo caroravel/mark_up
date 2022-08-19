@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
 import validator from 'validator'
 import Fondo from './diseñosPedro/images/rectangle_1.png'
+import Navbar from "./pruebaNav";
 
 function Login() {
 
@@ -63,6 +64,15 @@ function Login() {
       alert('La contraseña debe incluir al menos 1 caracter especial, una letra minúscula y una letra mayúscula')
     }
   }
+
+  const Navbar = () => {
+    return(
+        <div>
+        <Navbar/>
+        </div>
+    )
+  }
+
 
   return (
 
