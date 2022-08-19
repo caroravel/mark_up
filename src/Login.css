@@ -17,12 +17,25 @@
 }
 
 .popup {
-	position: absolute;
-	left: 50%;
-	top: -100%;
-	z-index: -1;
-	transform: translate(-50%, -50%);
-	transition: 0.5s;
+    position: absolute;
+    left: 50%;
+    top: -100%;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    transition: 0.5s;
+    width: 427px;
+    height: 463px;
+    margin-left: 30%;
+    border: 8px solid black;
+    border-radius: 40px;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
 }
 
 .popup.open {
@@ -102,6 +115,15 @@
 	background-position: center;
 	background-size: contain;*/
 	font-size: 53.5px;
+	margin-top: 20px;
+	font-family: 'Sora', sans-serif;
+	font-weight: 700;
+	letter-spacing: 3px;
+}
+
+.nuevaCampania{
+	width: 350px;
+	font-size: 45px;
 	margin-top: 20px;
 	font-family: 'Sora', sans-serif;
 	font-weight: 700;
@@ -192,3 +214,4 @@
 	font-style: italic;
 	color: black;
 }
+

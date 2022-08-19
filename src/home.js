@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
+import "./Login.css"
 
 const CrearCampania = () => {
   const [showPopup, setShowPopup] = useState(false);
@@ -13,7 +14,7 @@ const CrearCampania = () => {
 
   return (
     <>
-      <button onClick={() => setShowPopup(true)}>Abrir</button>
+      <button onClick={() => setShowPopup(true)}>+</button>
       <PopUp open={showPopup} handleSubmit={handleSubmit} />
     </>
   );
@@ -30,8 +31,9 @@ const PopUp = ({ handleSubmit, open }) => {
   const [idCampania, setidCampania] = useState("");
 
   return (
+    <div className = "centrar-popup">
     <div className={"popup" + (open ? " open" : "")}>
-      <div className="Bienvenido">Nueva Campaña</div>
+      <div className="nuevaCampania">Nueva Campaña</div>
 
       <Form className="form" onSubmit={handleSubmit}>
         <div className="inputText">
@@ -67,7 +69,7 @@ const PopUp = ({ handleSubmit, open }) => {
           </Form.Group>
         </div>
 
-        <button className="botoncitoIngresar" onClick>
+        <button className="botoncitoIngresar">
           <div className="palabraBotonCS">
             <svg viewBox="0 0 24 24">
               <path
@@ -79,7 +81,8 @@ const PopUp = ({ handleSubmit, open }) => {
         </button>
       </Form>
     </div>
-  );
+    </div>
+  );  
 };
 
 export default CrearCampania;
