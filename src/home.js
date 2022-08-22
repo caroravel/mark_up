@@ -85,4 +85,6 @@ const PopUp = ({ handleSubmit, open }) => {
   );  
 };
 
+<button>hola</button> 
+
 export default CrearCampania;
