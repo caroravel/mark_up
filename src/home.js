@@ -3,8 +3,10 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import "./Login.css"
+import UserInfo from "./context";
 
 const CrearCampania = () => {
+  const context = React.useContext(UserInfo)
   const [showPopup, setShowPopup] = useState(false);
 
   const handleSubmit = (e) => {
@@ -14,6 +16,7 @@ const CrearCampania = () => {
 
   return (
     <>
+      <span>hola {context.info.Nombre}</span>
       <button onClick={() => setShowPopup(true)}>+</button>
       <PopUp open={showPopup} handleSubmit={handleSubmit} />
     </>

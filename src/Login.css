@@ -23,9 +23,6 @@
     z-index: -1;
     transform: translate(-50%, -50%);
     transition: 0.5s;
-    width: 427px;
-    height: 463px;
-    margin-left: 30%;
     border: 8px solid black;
     border-radius: 40px;
     text-align: center;

@@ -24,8 +24,8 @@ const Navbar = ({ isAuthenticated }) => {
         ) : (
           // Si no esta autenticado
           <div className = "navcontenedor">
-          <NavLink className = {({isActive}) => (isActive? "activo":"desactivo")} to ="/">Inicio</NavLink>
-          <NavLink className = {({isActive}) => (isActive? "activo":"desactivo")} to ="/Login">Sign Up</NavLink>
+          <NavLink className = {({isActive}) => (isActive? "activo":"desactivo")} to ="/home">Inicio</NavLink>
+          <NavLink className = {({isActive}) => (isActive? "activo":"desactivo")} to ="/">Sign Up</NavLink>
           <NavLink className = {({isActive}) => (isActive? "activo":"desactivo")} to ="/Ingresar">Sign In</NavLink>
                   </div>
         )}

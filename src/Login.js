@@ -6,10 +6,12 @@ import "./Login.css";
 import validator from 'validator'
 import Fondo from './diseñosPedro/images/rectangle_1.png'
 import Navbar from "./pruebaNav";
+import UserInfo from "./context";
 
 function Login() {
 
   const navigate = useNavigate()
+  const context = React.useContext(UserInfo)
 
   const checkboxes = {
     c1: false,
@@ -58,7 +60,28 @@ function Login() {
       minLength: 8, minLowercase: 1,
       minUppercase: 1, minNumbers: 1, minSymbols: 1
     })) {
-      navigate("/home")
+      fetch('http://localhost:3001/register', {
+      method: "POST", 
+      headers: {
+        "Content-Type": "application/json"
+      }
+      ,
+      body: JSON.stringify({
+        name: name,
+        surname: surname,
+        email: email,
+        password: password,
+      })
+    })
+      .then(response => response.json())
+      .then(data => {
+        if(data.error) {
+          //hay error
+        } else {
+          context.setInfo(data)
+          navigate("/home")
+        }
+      });
     }
     else {
       alert('La contraseña debe incluir al menos 1 caracter especial, una letra minúscula y una letra mayúscula')
