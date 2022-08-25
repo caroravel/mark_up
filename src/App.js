@@ -3,11 +3,10 @@ import { Link } from "react-router-dom";
 import Navbar from "./pruebaNav";
 import Home from "./home"
 
-function App (){
-    const [isAuth, setIsAuth] = useState(true);
+function App ({isAuth}){
     return(
         <div>
-            <Navbar/>
+            
             {
                 isAuth ? <Home /> : <></>
             }

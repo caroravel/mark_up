@@ -26,13 +26,16 @@ function Root() {
         Apellido: null,
     })
 
+    const [isAuth, setIsAuth] = React.useState(false);
+
     return (
         <>
             <UserInfo.Provider value={{ info, setInfo }}>
+                <Navbar isAuthenticated = {isAuth} />
                 <Routes>
-                    <Route path="/home" element={<Home />} />
+                    <Route path="/home" element={<Home isAuth = {isAuth}/>} />
                     <Route path="/" element={<Login />} />
-                    <Route path="/ingresar" element={<Ingresar />} />
+                    <Route path="/ingresar" element={<Ingresar setIsAuth = {setIsAuth}/>} />
                     <Route path="/dashboard" element={<Dropdown />} />
                     </Routes>
             </UserInfo.Provider>

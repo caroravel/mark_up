@@ -9,7 +9,7 @@ import UserInfo from "./context";
 function botonIngresar() {
 }
 
-function Ingresar() {
+function Ingresar({ setIsAuth }) {
 
   const context = React.useContext(UserInfo)
 
@@ -32,7 +32,7 @@ function Ingresar() {
     event.preventDefault();
 
     fetch('http://localhost:3001/login', {
-      method: "POST", 
+      method: "POST",
       headers: {
         "Content-Type": "application/json"
       }
@@ -44,9 +44,10 @@ function Ingresar() {
     })
       .then(response => response.json())
       .then(data => {
-        if(data.error) {
+        if (data.error) {
           //hay error
         } else {
+          setIsAuth(true)
           context.setInfo(data)
           navigate("/home")
         }
