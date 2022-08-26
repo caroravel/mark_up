@@ -28,14 +28,17 @@ const CrearCampania = () => {
 
   return (
     <>
+    <div className="todasCampanias">
       {
         campañas.map((campaign) => {
-          return <button>{campaign.nombreCampaign}</button>
+          return <button className="campania">{campaign.nombreCampaign}</button>
         })
       }
       <span>hola {context.info.Nombre}</span>
-      <button onClick={() => setShowPopup(true)}>+</button>
+      <button onClick={() => setShowPopup(true)} className = "botonMas">+</button>
       <PopUp open={showPopup} setShowPopup={setShowPopup} getCampaigns={getCampaigns} />
+      <input type = "file"></input> 
+      </div>
     </>
   );
 };
@@ -49,6 +52,8 @@ const PopUp = ({ open, setShowPopup, getCampaigns }) => {
   const [accessToken, setaccessToken] = useState("");
 
   const [idCampania, setidCampania] = useState("");
+
+  const [archivo, setarchivo] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -113,7 +118,7 @@ const PopUp = ({ open, setShowPopup, getCampaigns }) => {
               />
             </Form.Group>
           </div>
-
+          <div className="botonesPopUp">
           <button className="botoncitoIngresar">
             <div className="palabraBotonCS">
               <svg viewBox="0 0 24 24">
@@ -124,6 +129,13 @@ const PopUp = ({ open, setShowPopup, getCampaigns }) => {
               </svg>
             </div>
           </button>
+
+          <button className="botoncitoIngresar">
+          <div className="palabraBotonCS">
+            X
+          </div>
+          </button>
+          </div>
         </Form>
       </div>
     </div>

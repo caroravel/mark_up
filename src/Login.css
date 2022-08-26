@@ -20,7 +20,7 @@
     position: absolute;
     left: 50%;
     top: -100%;
-    z-index: -1;
+    z-index: 1;
     transform: translate(-50%, -50%);
     transition: 0.5s;
     border: 8px solid black;
@@ -33,6 +33,7 @@
     flex-direction: column;
     gap: 20px;
     align-items: center;
+	background-color: white;
 }
 
 .popup.open {
@@ -212,3 +213,28 @@
 	color: black;
 }
 
+.botonesPopUp{
+	display: flex;
+	flex-direction: row;
+}
+
+.campania{
+    height: 200px;
+    width: 200px;
+    padding: 20px;
+    margin-top: 40px;
+    margin-left: 40px;
+}
+
+.todasCampanias{
+	display: flex;
+	gap: 20px;
+}
+
+.botonMas{
+	height: 200px;
+    width: 200px;
+    padding: 20px;
+    margin-top: 40px;
+    margin-left: 40px;
+}
