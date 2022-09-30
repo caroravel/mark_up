@@ -115,7 +115,7 @@ function Ingresar({ setIsAuth }) {
         </button>
 
         <div className="PostaUltLinea">
-          <Link to="/" className="YaTengoCuenta">Olvide mi contraseña.</Link>
+          <Link to="/paginaPrincipal" className="YaTengoCuenta">Olvide mi contraseña.</Link>
           <Link to="/login" className="VolverAlInicio">No tengo usuario.</Link>
         </div>
 

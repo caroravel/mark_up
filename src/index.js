@@ -37,6 +37,7 @@ function Root() {
                     <Route path="/" element={<Login />} />
                     <Route path="/ingresar" element={<Ingresar setIsAuth = {setIsAuth}/>} />
                     <Route path="/dashboard" element={<Dropdown />} />
+                    <Route path="/paginaPrincipal" element={<paginaPrincipal />} />
                     </Routes>
             </UserInfo.Provider>
 
