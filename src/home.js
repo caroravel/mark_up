@@ -34,10 +34,9 @@ const CrearCampania = () => {
           return <button className="campania">{campaign.nombreCampaign}</button>
         })
       }
-      <span>hola {context.info.Nombre}</span>
       <button onClick={() => setShowPopup(true)} className = "botonMas">+</button>
       <PopUp open={showPopup} setShowPopup={setShowPopup} getCampaigns={getCampaigns} />
-      <input type = "file"></input> 
+     {/*  <input type = "file"></input> */} 
       </div>
     </>
   );
