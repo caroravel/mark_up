@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
@@ -15,7 +15,7 @@ const CrearCampania = () => {
   }, [])
 
   function getCampaigns() {
-    fetch('http://localhost:3001/getData')
+    fetch('http://localhost:3001/' + context.info.idUsuario + "/verCampanasCliente")
       .then(response => response.json())
       .then(data => {
         if (data.error) {
@@ -54,6 +54,8 @@ const PopUp = ({ open, setShowPopup, getCampaigns }) => {
 
   const [archivo, setarchivo] = useState("");
 
+  const context = React.useContext(UserInfo)
+
   const handleSubmit = (e) => {
     e.preventDefault();
     fetch('http://localhost:3001/registerCampaign', {
@@ -66,15 +68,12 @@ const PopUp = ({ open, setShowPopup, getCampaigns }) => {
         nombreCampaña: nomCampaña,
         acc_token: accessToken,
         idCampaña: idCampania,
+        idUsuario: context.info.idUsuario
       })
     })
       .then(response => response.json())
       .then(data => {
-        if (data.error) {
-          //hay error
-        } else {
-          getCampaigns()
-        }
+        getCampaigns()
       });
     setShowPopup(false);
   };
