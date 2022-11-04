@@ -107,7 +107,7 @@ body{
 .palabraBotonCS{
 	width: 40px;
 	height: 40px;
-	color: rgb(255, 255, 255);
+	color: rgb(0, 0, 0);
 }
 
 .registrarse, .Bienvenido{
@@ -229,6 +229,7 @@ body{
 }
 
 .campania{
+	background-color: #FFFFFF;
     height: 200px;
     width: 200px;
     padding: 20px;
@@ -240,13 +241,19 @@ body{
 .todasCampanias{
 	display: flex;
 	gap: 20px;
+	margin-top: 20px ;
 }
 
 .botonMas{
+	background-color: #FFFFFF;
 	height: 200px;
     width: 200px;
     padding: 20px;
     margin-top: 40px;
     margin-left: 40px;
 	border-radius: 30px;
+}
+
+.contenidoBotonCampania{
+	display: flex;
 }

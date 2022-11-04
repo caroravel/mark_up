@@ -31,7 +31,7 @@ const CrearCampania = () => {
     <div className="todasCampanias">
       {
         campañas.map((campaign) => {
-          return <button className="campania">{campaign.nombreCampaign}</button>
+          return <Link to="/campania" className="campania" ><div className="contenidoBotonCampania">{campaign.nombreCampaign}</div></Link>
         })
       }
       <button onClick={() => setShowPopup(true)} className = "botonMas">+</button>
