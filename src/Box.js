@@ -28,6 +28,7 @@ export const Box = ({ id, left, top, hideSourceOnDrag, children }) => {
       style={{ ...style, left, top }}
       data-testid="box"
       contentEditable={true}
+      id={id}
     >
       {children}
     </div>
