@@ -257,3 +257,25 @@ body{
 .contenidoBotonCampania{
 	display: flex;
 }
+
+.home{
+	display: flex;
+	width: 100vw;
+	height: 100vh;
+	flex-direction: row;
+}
+
+.sideBar {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	width: 25vw;
+}
+
+.sideBarLine {
+	height: 90vh;
+	align-self: center;
+	justify-self: center;
+	width: 2px;
+	background-color: white;
+}

@@ -35,6 +35,8 @@ function Login() {
 
   const [confPassword, setconfPassword] = useState("");
 
+  const [tipoUsuario, setTipoUsuario] = useState("Cliente")
+
   var format = /^[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]*$/;
 
   function validateForm() {
@@ -194,14 +196,30 @@ function Login() {
               />
 
             </Form.Group>
-
           </div>
+          <Form.Group className="crearoponercodigo" size="lg" controlId="codigocampania">
+              <Form.Control
+
+                type="text"
+
+                value={name}
+
+                onChange={(e) => setName(e.target.value)}
+
+                placeholder={tipoUsuario == "Cliente" ? "Codigo de campaña" : "Crear codigo de campaña"}
+
+                className="input"
+              />
+
+            </Form.Group>
         </div>
 
         <div className="ultimalinea">
           <div className="checkboxes">
-            <div className="checkbox"><input type="radio" name="clienteOAgencia" value={cliente} /><div className = "palabraCheck">Cliente</div></div>
-            <div className="checkbox"><input type="radio" name="clienteOAgencia" value={agencia} /><div className = "palabraCheck">Agencia</div></div>
+            <div className="checkbox"><input type="radio" name="clienteOAgencia"/><div className = "palabraCheck">Cliente</div></div>
+            <div className="checkbox"><input type="radio" name="clienteOAgencia" onClick={() => {
+
+            }}/><div className = "palabraCheck">Agencia</div></div>
           </div>
 
           <button className="botoncitoCrearSesion" onClick={botonCrearSesion}>

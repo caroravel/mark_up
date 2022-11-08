@@ -26,19 +26,27 @@ const CrearCampania = () => {
       });
   }
 
+
+
   return (
-    <>
-    <div className="todasCampanias">
-      {
-        campañas.map((campaign) => {
-          return <Link to="/campania" className="campania" ><div className="contenidoBotonCampania">{campaign.nombreCampaign}</div></Link>
-        })
-      }
-      <button onClick={() => setShowPopup(true)} className = "botonMas">+</button>
-      <PopUp open={showPopup} setShowPopup={setShowPopup} getCampaigns={getCampaigns} />
-     {/*  <input type = "file"></input> */} 
+    <div className="home">
+      <div className="sideBar">
+
       </div>
-    </>
+      <div className="sideBarLine"/>
+
+
+      <div className="todasCampanias">
+        {
+          campañas.map((campaign) => {
+            return <Link to="/campania" className="campania" ><div className="contenidoBotonCampania">{campaign.nombreCampaign}</div></Link>
+          })
+        }
+        <button onClick={() => setShowPopup(true)} className = "botonMas">+</button>
+        <PopUp open={showPopup} setShowPopup={setShowPopup} getCampaigns={getCampaigns} />
+      {/*  <input type = "file"></input> */}
+      </div>
+    </div>
   );
 };
 
@@ -78,6 +86,7 @@ const PopUp = ({ open, setShowPopup, getCampaigns }) => {
     setShowPopup(false);
   };
 
+  
   return (
     <div className="centrar-popup">
       <div className={"popup" + (open ? " open" : "")}>
@@ -119,11 +128,16 @@ const PopUp = ({ open, setShowPopup, getCampaigns }) => {
           <div className="botonesPopUp">
           <button className="botoncitoIngresar">
             <div className="palabraBotonCS">
+            {/*<img src={imagenQueSeYo}>*/}
               <svg viewBox="0 0 24 24">
                 <path
                   fill="currentColor"
                   d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"
                 />
+                <line x1="10" y1="10" x2="120" y2="120"
+                stroke-width="10" stroke="RoyalBlue" />
+  <line x1="10" y1="120" x2="120" y2="10"
+        stroke-width="10" stroke="Gold" />
               </svg>
             </div>
           </button>
@@ -139,6 +153,7 @@ const PopUp = ({ open, setShowPopup, getCampaigns }) => {
     </div>
   );
 };
+
 
 <button>hola</button>
 

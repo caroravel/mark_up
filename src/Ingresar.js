@@ -45,7 +45,7 @@ function Ingresar({ setIsAuth }) {
       .then(response => response.json())
       .then(data => {
         if (data.error) {
-          //hay error
+          alert("Usuario o contraseña incorrectos")
         } else {
           setIsAuth(true)
           context.setInfo(data)

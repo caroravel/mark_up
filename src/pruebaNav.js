@@ -1,15 +1,5 @@
 import "./StyleNavbar.css"
 import {NavLink} from "react-router-dom"
-//export default function Navbar(){
-    //return(
-//         <div className = "navcontenedor">
-// <NavLink className = {({isActive}) => (isActive? "activo":"desactivo")} to ="/">Inicio</NavLink>
-// <NavLink className = {({isActive}) => (isActive? "activo":"desactivo")} to ="/Login">Sign Up</NavLink>
-// <NavLink className = {({isActive}) => (isActive? "activo":"desactivo")} to ="/Ingresar">Sign In</NavLink>
-//         </div>
-//     )
-// }
-
 
 const Navbar = ({ isAuthenticated }) => {
   return (
