@@ -26,15 +26,19 @@ const CrearCampania = () => {
       });
   }
 
-
-
   return (
     <div className="home">
       <div className="sideBar">
-
+        <div className="sideBarNomyApe">
+          <div className="sideBarNombre">
+            {context?.info?.Nombre} 
+          </div>
+          <div className="sideBarApellido">
+            {context?.info?.Apellido}
+          </div>
+        </div>
       </div>
       <div className="sideBarLine"/>
-
 
       <div className="todasCampanias">
         {
@@ -128,7 +132,6 @@ const PopUp = ({ open, setShowPopup, getCampaigns }) => {
           <div className="botonesPopUp">
           <button className="botoncitoIngresar">
             <div className="palabraBotonCS">
-            {/*<img src={imagenQueSeYo}>*/}
               <svg viewBox="0 0 24 24">
                 <path
                   fill="currentColor"
