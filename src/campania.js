@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
@@ -55,7 +55,7 @@ export default function Campania() {
         //const title = document.getElementById(item.id).textContent;
         setBoxes({
           ...boxes,
-          [item.id]: { ...boxes[item.id], title: "Hol" },
+          [item.id]: { ...boxes[item.id], title: item.value },
         });
         moveBox(item.id, left, top);
         return undefined;
@@ -76,11 +76,15 @@ export default function Campania() {
       [boxId]: { ...boxes[boxId], title: e.target.innerText },
     });
   };
+  
+  useEffect(() => {
+    console.log(Object.keys(boxes));
+  })
 
   return (
     <>
       <div ref={drop} style={styles}>
-        {Object.keys(boxes).map((key) => {
+        {boxes ? (Object.keys(boxes).map((key) => {
           const { left, top, title } = boxes[key];
           return (
             <Box
@@ -88,12 +92,12 @@ export default function Campania() {
               id={key}
               left={left}
               top={top}
-              hideSourceOnDrag={hideSourceOnDrag}
+              hideSourceOnDrag={toggle}
             >
               {title}
             </Box>
           );
-        })}
+        })) : null}
         <button onClick={createNewBox}>+</button>
       </div>
     </>
