@@ -206,7 +206,7 @@ function Login() {
 
                 onChange={(e) => setName(e.target.value)}
 
-                placeholder={tipoUsuario == "Cliente" ? "Codigo de campaña" : "Crear codigo de campaña"}
+                placeholder={tipoUsuario == "Cliente" ? "Crear código de campaña" : "Crear codigo de campaña"}
 
                 className="input"
               />

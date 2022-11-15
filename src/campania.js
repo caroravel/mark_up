@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import "./Login.css";
 import UserInfo from "./context";
 import Navbar from "./pruebaNav";
-
 import update from "immutability-helper";
 import { useCallback, useState } from "react";
 import { useDrop } from "react-dnd";
