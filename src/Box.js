@@ -1,13 +1,20 @@
-import { useDrag } from 'react-dnd'
-import { ItemTypes } from './ItemTypes.js'
+import { useDrag } from "react-dnd";
+import { ItemTypes } from "./ItemTypes.js";
 const style = {
-  position: 'absolute',
-  border: '1px dashed gray',
-  backgroundColor: 'white',
-  padding: '0.5rem 1rem',
-  cursor: 'move',
-}
-export const Box = ({ id, left, top, hideSourceOnDrag, children }) => {
+  position: "absolute",
+  border: "1px dashed gray",
+  backgroundColor: "white",
+  padding: "0.5rem 1rem",
+  cursor: "move",
+};
+export const Box = ({
+  id,
+  left,
+  top,
+  hideSourceOnDrag,
+  children,
+  changeTitle,
+}) => {
   const [{ isDragging }, drag] = useDrag(
     () => ({
       type: ItemTypes.BOX,
@@ -16,10 +23,10 @@ export const Box = ({ id, left, top, hideSourceOnDrag, children }) => {
         isDragging: monitor.isDragging(),
       }),
     }),
-    [id, left, top],
-  )
+    [id, left, top]
+  );
   if (isDragging && hideSourceOnDrag) {
-    return <div ref={drag} />
+    return <div ref={drag} />;
   }
   return (
     <div
@@ -27,10 +34,14 @@ export const Box = ({ id, left, top, hideSourceOnDrag, children }) => {
       ref={drag}
       style={{ ...style, left, top }}
       data-testid="box"
-      contentEditable={true}
       id={id}
     >
-      {children}
+      <input
+        className="boxInput"
+        value={children}
+        onChange={(e) => changeTitle(id, e.target.value)}
+      ></input>
+      
     </div>
-  )
-}
+  );
+};

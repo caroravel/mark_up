@@ -316,3 +316,29 @@ body{
 	display: flex;
 	justify-content: center;
 }
+
+.boxInput {
+	appearance: none;
+	border: none;
+	outline: none;
+}
+
+.comentarios{
+	width: -webkit-fill-available;
+    height: 300px;
+    border: 1px solid black;
+    position: relative;
+}
+
+.masComentarios{
+	background-color: rgb(255, 255, 255);
+	color: black;
+	width: 100px;
+	height: 50px;
+	border-radius: 20px;
+	margin: 20px;
+}
+
+a{
+	border-radius: 20px;
+}
