@@ -37,6 +37,14 @@ const CrearCampania = () => {
             {context?.info?.Apellido}
           </div>
         </div>
+
+        <div className="sideBarNomyApe">
+          <div className="sideBarNombre">
+          {context?.info?.cliente_agencia === 0 ? "Cliente" : "Agencia"}
+          </div>
+        </div>
+
+        
       </div>
       <div className="sideBarLine"/>
 

@@ -10,6 +10,8 @@ import UserInfo from "./context";
 import Campania from "./campania";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
+import CrearCodigo from "./crearCodigo";
+import IngresarCodigo from "./ingresarCodigo";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -41,6 +43,8 @@ function Root() {
           />
           <Route path="/dashboard" element={<Dropdown />} />
           <Route path="/paginaPrincipal" element={<paginaPrincipal />} />
+          <Route path="/crearCodigo" element={<CrearCodigo />} />
+          <Route path="/ingresarCodigo" element={<IngresarCodigo />} />
           <Route
             path="/campania"
             element={

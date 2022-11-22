@@ -27,7 +27,7 @@ export default function Campania() {
     const random = Math.random() * 1000;
     setBoxes({
       ...boxes,
-      [random]: { top: 20, left: 80, title: "" },
+      [random]: { top: 100, left: 100, title: ""},
     });
   };
 

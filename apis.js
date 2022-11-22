@@ -14,9 +14,10 @@ app.post("/register", (req, res) => {
   const surname = req.body.surname;
   const password = req.body.password;
   const email = req.body.email;
+  const type = req.body.type;
   db.query(
-    "INSERT INTO usuario (Nombre, Apellido, password, mail) VALUES (?,?,?,?)",
-    [name, surname, password, email],
+    "INSERT INTO usuario (Nombre, Apellido, password, mail, cliente_agencia) VALUES (?,?,?,?,?)",
+    [name, surname, password, email, type],
     (err, result) => {
       if (err) {
         console.log(err);

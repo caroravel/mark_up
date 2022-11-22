@@ -73,6 +73,7 @@ function Login() {
         surname: surname,
         email: email,
         password: password,
+        type: tipoUsuario === "Cliente" ? 0 : 1
       })
     })
       .then(response => response.json())
@@ -81,7 +82,11 @@ function Login() {
           //hay error
         } else {
           context.setInfo(data)
-          navigate("/home")
+          if(tipoUsuario === "Cliente") {
+            navigate("/ingresarCodigo")
+          } else {
+            navigate("/crearCodigo")
+          }
         }
       });
     }
@@ -197,31 +202,14 @@ function Login() {
 
             </Form.Group>
           </div>
-          <Form.Group className="crearoponercodigo" size="lg" controlId="codigocampania">
-              <Form.Control
-
-                type="text"
-
-                value={name}
-
-                onChange={(e) => setName(e.target.value)}
-
-                placeholder={tipoUsuario == "Cliente" ? "Crear código de campaña" : "Crear codigo de campaña"}
-
-                className="input"
-              />
-
-            </Form.Group>
         </div>
 
         <div className="ultimalinea">
           <div className="checkboxes">
-            <div className="checkbox"><input type="radio" name="clienteOAgencia"/><div className = "palabraCheck">Cliente</div></div>
-            <div className="checkbox"><input type="radio" name="clienteOAgencia" onClick={() => {
-
-            }}/><div className = "palabraCheck">Agencia</div></div>
+            <div className="checkbox"><input type="radio" name="clienteOAgencia" onClick={() => setTipoUsuario("Cliente")}/><div className = "palabraCheck">Cliente</div></div>
+            <div className="checkbox"><input type="radio" name="clienteOAgencia" onClick={() => setTipoUsuario("Agencia")}/><div className = "palabraCheck">Agencia</div></div>
           </div>
-
+          <a href="https://google.com" target="_blank" rel="noreferrer">
           <button className="botoncitoCrearSesion" onClick={botonCrearSesion}>
             <div className="palabraBotonCS">
               <svg viewBox="0 0 24 24">
@@ -229,6 +217,7 @@ function Login() {
               </svg>
             </div>
           </button>
+          </a>
         </div>
 
         <div className = "PostaUltLinea">

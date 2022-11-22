@@ -342,3 +342,16 @@ body{
 a{
 	border-radius: 20px;
 }
+
+.box{
+	border-radius: 20px;
+}
+
+.IniciarEmpresa{
+	width: 350px;
+	font-size: 53.5px;
+	margin-top: 20px;
+	font-family: 'Sora', sans-serif;
+	font-weight: 700;
+	letter-spacing: 3px;
+}
