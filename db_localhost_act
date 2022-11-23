@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 03-11-2022 a las 18:05:28
+-- Tiempo de generación: 23-11-2022 a las 15:20:31
 -- Versión del servidor: 5.7.17-log
 -- Versión de PHP: 5.6.30
 
@@ -23,6 +23,19 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `alerta`
+--
+
+CREATE TABLE `alerta` (
+  `idAlerta` int(255) NOT NULL,
+  `hora` time(6) NOT NULL,
+  `fecha` date NOT NULL,
+  `campaign` int(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `campaign`
 --
 
@@ -38,15 +51,114 @@ CREATE TABLE `campaign` (
 --
 
 INSERT INTO `campaign` (`idCampaign`, `datos`, `acc_token`, `nombreCampaign`) VALUES
+(9, '', 'chofabercun', 'Chanel'),
+(12, '', 'Carotrola2!', 'Coca Cola'),
+(13, '', '1', 'hola'),
 (67, '', 'hola', 'Coca Cola'),
 (123, '', '123', 'mica'),
+(345, '', 'viviana', 'Viviana\'s company'),
+(353, '', 'Sebas', 'Intexian'),
+(567, '', 'ezequiel', 'ezequiel'),
+(678, '', 'ab404', 'Coca Cola'),
 (789, '', 'hola', 'Halpe`s company'),
+(976, '', 'chofa', 'chofa'),
 (1234, '', 'haloo', 'caroravel2005@gmail.com'),
-(98761, '', '123', 'mica');
+(3030, '', '1999', 'Halpe`s company'),
+(8734, '', 'rama', 'rama'),
+(12346, '', 'nacho', 'mica'),
+(98761, '', '123', 'mica'),
+(2433545, '', '', ''),
+(2433546, '', '', ''),
+(2433547, '', '', 'hola'),
+(2433548, '', '', 'hola'),
+(2433549, '', '', ''),
+(2433550, '', 'Carotrola2!', ''),
+(2433551, '', 'Carotrola2!', ''),
+(2433552, '', '', ''),
+(2433553, '', '', ''),
+(2433554, '', '', ''),
+(2433555, '', '', ''),
+(2433556, '', '', ''),
+(2433557, '', '', ''),
+(2433558, '', '', '');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `campaign-usuario`
+--
+
+CREATE TABLE `campaign-usuario` (
+  `id` int(10) NOT NULL,
+  `idCampaign` int(255) NOT NULL,
+  `idUsuario` int(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `campaign-usuario`
+--
+
+INSERT INTO `campaign-usuario` (`id`, `idCampaign`, `idUsuario`) VALUES
+(5, 0, 19),
+(6, 0, 19),
+(7, 0, 19),
+(3, 0, 20),
+(10, 0, 22),
+(12, 0, 23),
+(16, 0, 23),
+(20, 0, 28),
+(21, 0, 28),
+(23, 0, 34),
+(24, 0, 34),
+(25, 0, 34),
+(26, 0, 34),
+(27, 0, 34),
+(19, 9, 28),
+(17, 12, 23),
+(8, 13, 19),
+(13, 345, 24),
+(14, 353, 25),
+(15, 567, 26),
+(4, 678, 20),
+(1, 789, 20),
+(9, 976, 19),
+(11, 3030, 22),
+(22, 8734, 30),
+(18, 12346, 27),
+(2, 98761, 20);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuario`
+--
+
+CREATE TABLE `usuario` (
+  `idUsuario` int(255) NOT NULL,
+  `nombre` varchar(255) NOT NULL,
+  `mail` varchar(255) NOT NULL,
+  `cliente_agencia` tinyint(1) NOT NULL,
+  `apellido` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `idCampaign` int(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `usuario`
+--
+
+INSERT INTO `usuario` (`idUsuario`, `nombre`, `mail`, `cliente_agencia`, `apellido`, `password`, `idCampaign`) VALUES
+(34, 'Carolina', 'caroravel@gmail.com', 1, 'Ravel', 'Carolina1.', NULL);
 
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `alerta`
+--
+ALTER TABLE `alerta`
+  ADD PRIMARY KEY (`idAlerta`);
 
 --
 -- Indices de la tabla `campaign`
@@ -55,14 +167,54 @@ ALTER TABLE `campaign`
   ADD PRIMARY KEY (`idCampaign`);
 
 --
+-- Indices de la tabla `campaign-usuario`
+--
+ALTER TABLE `campaign-usuario`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `idCampaign` (`idCampaign`,`idUsuario`),
+  ADD KEY `idUsuario` (`idUsuario`);
+
+--
+-- Indices de la tabla `usuario`
+--
+ALTER TABLE `usuario`
+  ADD PRIMARY KEY (`idUsuario`),
+  ADD KEY `idCampaign` (`idCampaign`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
+-- AUTO_INCREMENT de la tabla `alerta`
+--
+ALTER TABLE `alerta`
+  MODIFY `idAlerta` int(255) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT de la tabla `campaign`
 --
 ALTER TABLE `campaign`
-  MODIFY `idCampaign` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2433545;
+  MODIFY `idCampaign` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2433559;
+--
+-- AUTO_INCREMENT de la tabla `campaign-usuario`
+--
+ALTER TABLE `campaign-usuario`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+--
+-- AUTO_INCREMENT de la tabla `usuario`
+--
+ALTER TABLE `usuario`
+  MODIFY `idUsuario` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `usuario`
+--
+ALTER TABLE `usuario`
+  ADD CONSTRAINT `usuario_ibfk_1` FOREIGN KEY (`idCampaign`) REFERENCES `campaign` (`idCampaign`);
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
