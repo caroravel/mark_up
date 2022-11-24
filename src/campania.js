@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "./Login.css";
 import UserInfo from "./context";
 import Navbar from "./pruebaNav";
@@ -10,6 +10,7 @@ import { useCallback, useState } from "react";
 import { useDrop } from "react-dnd";
 import { Box } from "./Box.js";
 import { ItemTypes } from "./ItemTypes.js";
+
 const styles = {
   width: 1400,
   height: 607,
@@ -18,6 +19,22 @@ const styles = {
 };
 
 export default function Campania() {
+
+  const {id} = useParams()
+
+  useEffect(() => {
+    fetch('http://localhost:3001/getData?idCampaign=' + id, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json"
+      },
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data)
+      });
+  }, [])
+
   const [boxes, setBoxes] = useState({
     a: { top: 400, left: 100, title: "Mové los comentarios" },
     b: { top: 180, left: 20, title: "Moveme!" },

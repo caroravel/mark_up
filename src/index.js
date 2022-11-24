@@ -12,6 +12,7 @@ import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import CrearCodigo from "./crearCodigo";
 import IngresarCodigo from "./ingresarCodigo";
+import Home2 from "./home2";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -45,8 +46,9 @@ function Root() {
           <Route path="/paginaPrincipal" element={<paginaPrincipal />} />
           <Route path="/crearCodigo" element={<CrearCodigo />} />
           <Route path="/ingresarCodigo" element={<IngresarCodigo />} />
+          <Route path="/home2" element={<Home2 />} />
           <Route
-            path="/campania"
+            path="/campania/:id"
             element={
               <DndProvider backend={HTML5Backend}>
                 <Campania />

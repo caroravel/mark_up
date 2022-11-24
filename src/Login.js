@@ -83,9 +83,9 @@ function Login() {
         } else {
           context.setInfo(data)
           if(tipoUsuario === "Cliente") {
-            navigate("/ingresarCodigo")
+            navigate("/home2")
           } else {
-            navigate("/crearCodigo")
+            navigate("/home")
           }
         }
       });

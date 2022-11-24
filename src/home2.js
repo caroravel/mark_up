@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import "./Login.css"
 import UserInfo from "./context";
 
-const CrearCampania = () => {
+const Home2 = () => {
   const context = React.useContext(UserInfo)
   const [showPopup, setShowPopup] = useState(false);
   const [campañas, setCampañas] = useState([]);
@@ -51,7 +51,7 @@ const CrearCampania = () => {
       <div className="todasCampanias">
         {
           campañas.map((campaign) => {
-            return <Link to={"/campania/" + campaign.idCampaign} className="campania" ><div className="contenidoBotonCampania">{campaign.nombreCampaign}</div></Link>
+            return <Link to="/campania" className="campania" ><div className="contenidoBotonCampania">{campaign.nombreCampaign}</div></Link>
           })
         }
         <button onClick={() => setShowPopup(true)} className = "botonMas">+</button>
@@ -78,17 +78,15 @@ const PopUp = ({ open, setShowPopup, getCampaigns }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch('http://localhost:3001/registerCampaign', {
+    fetch('http://localhost:3001/addCampaign', {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       }
       ,
       body: JSON.stringify({
-        nombreCampaña: nomCampaña,
-        acc_token: accessToken,
-        idCampaña: idCampania,
-        idUsuario: context.info.idUsuario
+        token: accessToken,
+        idUsuario: context.info.idUsuario,
       })
     })
       .then(response => response.json())
@@ -102,20 +100,8 @@ const PopUp = ({ open, setShowPopup, getCampaigns }) => {
   return (
     <div className="centrar-popup">
       <div className={"popup" + (open ? " open" : "")}>
-        <div className="nuevaCampania">Nueva Campaña</div>
-
-        <Form className="form" onSubmit={handleSubmit}>
-          <div className="inputText">
-            <Form.Group size="lg" controlId="nomCampaña">
-              <Form.Control
-                autoFocus
-                type="text"
-                value={nomCampaña}
-                placeholder="nombre de la campaña"
-                onChange={(e) => setnomCampaña(e.target.value)}
-                className="input"
-              />
-            </Form.Group>
+        <div className="nuevaCampania">Unirse a una campaña</div>
+        <Form onSubmit={handleSubmit}>
             <Form.Group size="lg" controlId="accesToken">
               <Form.Control
                 autoFocus
@@ -123,45 +109,31 @@ const PopUp = ({ open, setShowPopup, getCampaigns }) => {
                 value={accessToken}
                 placeholder="access token"
                 onChange={(e) => setaccessToken(e.target.value)}
-                className="input"
+                className="input2"
               />
             </Form.Group>
-            <Form.Group size="lg" controlId="idCampania">
-              <Form.Control
-                autoFocus
-                type="number"
-                value={idCampania}
-                placeholder="id campaña"
-                onChange={(e) => setidCampania(e.target.value)}
-                className="input"
-              />
-            </Form.Group>
-          </div>
-          <div className="botonesPopUp">
-          <button className="botoncitoIngresar">
-            <div className="palabraBotonCS">
-              <svg viewBox="0 0 24 24">
-                <path
-                  fill="currentColor"
-                  d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"
-                />
-              </svg>
-            </div>
-          </button>
+            <div className="botonesPopUp">
+                <button className="botoncitoIngresar">
+                <div className="palabraBotonCS">
+                    <svg viewBox="0 0 24 24">
+                    <path
+                        fill="currentColor"
+                        d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"
+                    />
+                    </svg>
+                </div>
+                </button>
 
-          <button type="button" className="botoncitoIngresar" onClick={() => setShowPopup(false)}>
-          <div className="palabraBotonCS">
-            X
-          </div>
-          </button>
-          </div>
+                <button type="button" className="botoncitoIngresar" onClick={() => setShowPopup(false)}>
+                <div className="palabraBotonCS">
+                    X
+                </div>
+                </button>
+            </div>
         </Form>
       </div>
     </div>
   );
 };
 
-
-<button>hola</button>
-
-export default CrearCampania;
+export default Home2;

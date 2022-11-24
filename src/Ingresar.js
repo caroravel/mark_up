@@ -49,7 +49,12 @@ function Ingresar({ setIsAuth }) {
         } else {
           setIsAuth(true)
           context.setInfo(data)
-          navigate("/home")
+          if(data.cliente_agencia === 1) {
+            navigate("/home")
+          } else {
+            navigate("/home2")
+          }
+          
         }
       });
 
@@ -116,7 +121,7 @@ function Ingresar({ setIsAuth }) {
 
         <div className="PostaUltLinea">
           <Link to="/paginaPrincipal" className="YaTengoCuenta">Olvide mi contraseña.</Link>
-          <Link to="/login" className="VolverAlInicio">No tengo usuario.</Link>
+          <Link to="/" className="VolverAlInicio">No tengo usuario.</Link>
         </div>
 
       </Form>
